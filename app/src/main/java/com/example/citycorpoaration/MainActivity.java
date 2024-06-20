@@ -1,37 +1,51 @@
-package com.example.citycorpoaration;;
+package com.example.citycorpoaration;
 
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
+import android.widget.TextView;
+
 import com.google.android.material.textfield.TextInputEditText;
 
 public class MainActivity extends AppCompatActivity {
-    TextView login;
-    Button submit;
-    TextInputEditText email, password,forgotpassword,signup;
-
+    Button submitbutton;
+    TextInputEditText idemailtextfield, idpasswordtextfield;
+    TextView signup, forgotpassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        submit = findViewById(R.id.submit_btn);
-        signup = findViewById(R.id.signup_btn);
-        email = findViewById(R.id.email1);
-        password = findViewById(R.id.pwd1);
-        forgotpassword = findViewById(R.id.forgot_password1_btn);
-
-        login.setOnClickListener(new View.OnClickListener() {
+        submitbutton = findViewById(R.id.submitButton);
+        idemailtextfield = findViewById(R.id.idemailtextfield);
+        idpasswordtextfield = findViewById(R.id.idpasswordtextfield);
+        signup = findViewById(R.id.idSignup);
+        forgotpassword = findViewById(R.id.resetButton);
+        submitbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String email_str = idemailtextfield.getText().toString().trim();
+                String password_str = idpasswordtextfield.getText().toString().trim();
 
+                if (email_str.isEmpty()) {
+                    idemailtextfield.setError("Email is required");
+                    idemailtextfield.requestFocus();
+                }
+                else if (password_str.isEmpty()) {
+                    idpasswordtextfield.setError("Password is required");
+                    idpasswordtextfield.requestFocus();
+                }
+                else if (password_str.length()<6) {
+                    idpasswordtextfield.setError("Password must contain at least 6 characters");
+                    idpasswordtextfield.requestFocus();
+                }
+                else {
+                    Intent intent = new Intent(MainActivity.this, NavigationActivity.class);
+                    startActivity(intent);
+                }
             }
-
         });
-
     }
 }

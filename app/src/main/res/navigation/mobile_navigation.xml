@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.citycorpoaration.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_permission"
+        android:name="com.example.citycorpoaration.ui.permission.PermissionFragment"
+        android:label="@string/menu_permission"
+        tools:layout="@layout/fragment_permission" />
+
+    <fragment
+        android:id="@+id/nav_license"
+        android:name="com.example.citycorpoaration.ui.license.LicenseFragment"
+        android:label="@string/menu_license"
+        tools:layout="@layout/fragment_license" />
+    <fragment
+        android:id="@+id/nav_renewlicense"
+        android:name="com.example.citycorpoaration.ui.renewlicense.RenewLicenseFragment"
+        android:label="@string/menu_renewlicense"
+        tools:layout="@layout/fragment_renew_license" />
+    <fragment
+        android:id="@+id/nav_complaints"
+        android:name="com.example.citycorpoaration.ui.complaints.ComplaintsFragment"
+        android:label="@string/menu_complaints"
+        tools:layout="@layout/fragment_complaints" />
+    <fragment
+        android:id="@+id/nav_updatePassword"
+        android:name="com.example.citycorpoaration.ui.updatePassword.UpdatePasswordFragment"
+        android:label="@string/menu_updatePassword"
+        tools:layout="@layout/fragment_update_password" />
+</navigation>

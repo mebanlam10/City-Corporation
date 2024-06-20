@@ -6,7 +6,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
     tools:ignore="HardcodedText"
     tools:context=".MainActivity">
 
@@ -20,9 +19,10 @@
         android:textColor="#37474F"
         android:fontFamily="sans-serif-black"
         android:layout_marginBottom="30dp"
-        android:layout_marginTop="60dp"/>
+        android:layout_marginTop="150dp"/>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/idemailtextfield"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:boxBackgroundColor="#AEC5D6"
@@ -32,66 +32,95 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/email1"
             android:paddingVertical="18dp"
             android:layout_marginHorizontal="60dp"
             android:inputType="textEmailAddress"
             android:textColorHint="#37474F"/>
-
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/idpasswordtextfield"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:endIconMode="password_toggle"
         app:boxBackgroundColor="#AEC5D6"
         android:layout_marginTop="20dp"
-        android:hint="Password">
-
+        android:hint="Password"
+        app:endIconMode="password_toggle">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/pwd1"
             android:paddingVertical="18dp"
             android:layout_marginHorizontal="60dp"
             android:inputType="textPassword"
             android:textColorHint="#37474F"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
-            android:text="Forgot Password?"
-            android:textColor="#0B32A6"
-            android:id="@+id/forgot_password1_btn"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="60dp"
-        android:layout_marginTop="20dp"
-        android:text="Submit"
-        android:id="@+id/submit_btn"
-        android:backgroundTint="#4D7A9C"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="60dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Do not have an account?"
+            android:text="Forgot Password?"
             android:layout_marginEnd="10dp"
-            android:layout_marginStart="25dp"
+            android:layout_marginStart="10dp"
             android:textAlignment="center"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sign up"
-            android:textColor="#0B32A6"
-            android:id="@+id/signup_btn"/>
+            android:id="@+id/resetButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="Reset"
+            android:textColor="#37474F"
+            android:focusable="true"
+            android:clickable="true"/>
     </LinearLayout>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:id="@+id/submitButton"
+        android:backgroundTint="#AEC5D6"
+        android:textColor="#37474F"
+        android:layout_marginHorizontal="10dp"
+        android:text="Submit"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="Don't have an account?"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/idSignup"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="Sign Up"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
